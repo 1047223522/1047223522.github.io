@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>开博大吉 | 我的个人博客</title>
+  <title>html标签（一） | 我的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我的博客开通啦~">
+  <meta name="description" content="html的基本结构及">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开博大吉">
-<meta property="og:url" content="http://yoursite.com/2019/03/17/开博大吉/index.html">
+<meta property="og:title" content="html标签（一）">
+<meta property="og:url" content="http://yoursite.com/2019/03/25/html标签（一）/index.html">
 <meta property="og:site_name" content="我的个人博客">
-<meta property="og:description" content="我的博客开通啦~">
+<meta property="og:description" content="html的基本结构及">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-17T14:28:01.818Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/25/html标签（一）/xx">
+<meta property="og:updated_time" content="2019-03-25T11:40:22.159Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开博大吉">
-<meta name="twitter:description" content="我的博客开通啦~">
+<meta name="twitter:title" content="html标签（一）">
+<meta name="twitter:description" content="html的基本结构及">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/25/html标签（一）/xx">
   
     <link rel="alternative" href="/atom.xml" title="我的个人博客" type="application/atom+xml">
   
@@ -150,27 +152,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-开博大吉" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-html标签（一）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      开博大吉
+      html标签（一）
     </h1>
   
 
         
-        <a href="/2019/03/17/开博大吉/" class="archive-article-date">
-  	<time datetime="2019-03-17T07:15:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
+        <a href="/2019/03/25/html标签（一）/" class="archive-article-date">
+  	<time datetime="2019-03-25T10:51:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我的博客开通啦~</p>
+        <p>html的基本结构及<br><a id="more"></a></p>
+<h2 id="1-H系列标签（Header"><a href="#1-H系列标签（Header" class="headerlink" title="1.H系列标签（Header)"></a>1.H系列标签（Header)</h2><p>作用：用于给文本添加标题语义<br>格式：<code>&lt;h1&gt;文字&lt;/h1&gt;</code><br>注意点：<br>    • H1标签是给文本添加标题语义，不是用于修改文本的样式<br>    • 一共有6个，从h1——h6，超过6无效<br>    • 被h系列标签包裹的内容会独占一行<br>    • h1最大，h6最小<br>    •在企业开发中，一定要慎用h类标签，特别是h1标签，在企业开发中一般情况下一个界面中只能出现一个h1标签（和seo有关）</p>
+<h2 id="2-p标签-paragraph"><a href="#2-p标签-paragraph" class="headerlink" title="2.p标签(paragraph)"></a>2.p标签(paragraph)</h2><p>作用：告诉浏览器哪些文字是一个段落<br>格式：<code>&lt;p&gt;文字&lt;/p&gt;</code><br>注意点：在浏览器中会单独占一行</p>
+<h2 id="3-Hr标签（horizontal-rule）"><a href="#3-Hr标签（horizontal-rule）" class="headerlink" title="3.Hr标签（horizontal rule）"></a>3.Hr标签（horizontal rule）</h2><p>作用：在浏览器上显示一条分割线<br>格式：<code>&lt;hr&gt;</code><br>注意点：在浏览器中单独占据一行；hr标签可以写/（xhtml标准）或者不写（html标准），在做前端开发中，按照高级开发工具提示即可</p>
+<h2 id="4-img标签"><a href="#4-img标签" class="headerlink" title="4.img标签"></a>4.img标签</h2><p>作用：image缩写，高速浏览器我们需要显示一张图片<br>格式：<code>&lt;IMG SRC=&quot;&quot;&gt;</code>,src是英文source的缩写，告诉浏览器需要显示的图片名称<br>注意点：<br>    • 和h标签、p标签不一样，img标签不会独占一行；<br>    • 指定高度和宽度，可能会导致图片变形，如果要避免变形，只指定宽度或高度其中一个即可<br>属性：<br>    • width宽度(无指定宽度高度，按照默认显示)<br>    • height高度(最好只指定宽度或高度，防止变形)<br>    • title鼠标悬停在鼠标上时所弹出的描述框）<br>    • alt是alternate的缩写，告诉浏览器当需要显示的图片找不到时，做指定的显示内容<br>img标签的路径问题：其实想给sec属性赋值有两种方式：<br>    i. 相对路径：每次都从.HTML文件所在的文件夹开始查找<br>        同级：图片和.HTML文件储存在同一个文件夹中；格式：<code>&lt;img src=“xx”&gt;</code><br>        下级（用的最多）：储存图片的文件夹和.html文件在同一个文件夹中，格式 : <code>&lt;img src=“images/xx”&gt;</code><br>        上级：存储图片的文件和存储.html文件的文件夹在同一个位置；格式：<code>&lt;img src=“../xx”&gt;</code><br>    ii. 绝对路径：每次都是从指定的盘符（c盘d盘）开始查找，格式：<code>&lt;img src=&quot;C:\Users\fuyuh\Desktop\HTML5/xx&gt;</code><br>注意：<br>    • 路径中不要出现中文，否则可能出现未知问题<br>    • 如果通过相对路径指定，不能跨盘符<br>    • 以后企业开发中如果需要编写路径，统一使用发斜杠/，不要使用正斜杠、，因为将来我们开放的程序可能会部署到其他操作系统的服务器中，而在其他操作系统中路径都是/。<br>    • 在企业开发中，一般不适用绝对路径，可以移植性不好。也就是说将你写好的代码移植给别人，可能用不了。</p>
+<h2 id="5-br标签（break）"><a href="#5-br标签（break）" class="headerlink" title="5.br标签（break）"></a>5.br标签（break）</h2><p>作用：html中换行<br>格式：<code>&lt;br&gt;</code><br>注意：<br>    • 多个br标签可以连续实用，实用多少个br标签就换多少行<br>    • 由于html作用是用于给文本添加语义，而br标签的语义是不另起一个段落换行，而在企业开发中一般情况下需要换行是因为需要另起一个段落，所以企业开发中很少使用br标签 （企业开放中使用p标签的多）</p>
+<h2 id="6-注释标签"><a href="#6-注释标签" class="headerlink" title="6.注释标签"></a>6.注释标签</h2><p>作用：注释<br>格式：<code>&lt;!----&gt;</code></p>
+<h2 id="7-a标签"><a href="#7-a标签" class="headerlink" title="7.a标签"></a>7.a标签</h2><p>作用：用于控制页面与页面之间跳转<br>格式：<code>&lt;a href=&quot;指定需要跳转的目标界面&quot;&gt;需要展现给用户查看的内容&lt;/a&gt;</code><br>属性：<br>    i. target属性：控制如何跳转，_self当前选项卡跳转（默认）；_blank在新的选项卡中跳转；_parent在父框架跳转；_top在最顶层框架跳转。<br>    ii. title属性：与img标签中title一样，都是用来控制鼠标悬停是显示的提示文本<br>    iii. id属性：跳转到指定位置；（1）给指定标签指定id属性，如<code>&lt;h2 id=&quot;xx&quot;&gt;</code>（2）告诉a标签需要跳转目标所对象标签的id属性<code>&lt;a href=&quot;#xx&quot;&gt;xxxx&lt;/a&gt;</code>。<br>注意：<br>    • a标签不只可以让文字点击，也可以让图片点击（格式：<a href="url"><img src="/2019/03/25/html标签（一）/xx"></a><br>    • 一个a标签必须有一个href属性，否在a标签不知道要跳转到什么地方<br>    • 如果通过a标签的href属性指定一个url地址，那么必须在地质前面加上http://或https://<br>    • a标签的href属性除了可以指定一个网络地址以外，还可以指定一个本地的地址<br>特例：<br>    <code>&lt;a href=&quot;javascript:;&quot;&gt;&lt;/a&gt;</code>, 伪协议，不起任何效果的跳转。<br>   <code>&lt;a href=&quot;javascript:alert=(1)&quot;&gt;&lt;/a&gt;</code><br>   <code>&lt;a href=&quot;//qq.com&quot;&gt;&lt;/a&gt;</code>，无协议<br>    <code>&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;</code><br>    <code>&lt;a href=&quot;?name=aaa&quot;&gt;&lt;/a&gt;</code><br>    <code>&lt;a href=&quot;./index.html&quot;&gt;&lt;/a&gt;</code><br>    <code>&lt;a href=&quot;download&quot;&gt;&lt;/a&gt;</code></p>
 
       
 
@@ -250,7 +259,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/17/开博大吉/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/25/html标签（一）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -264,15 +273,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/18/第二篇博客/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          命令行中is、cat、mv、touch以及网站explainshell.com 的用法
-        
-      </div>
-    </a>
   
+    <a href="/2019/03/24/HTTP入门/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTTP入门</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
