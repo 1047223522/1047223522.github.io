@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        HTTP入门 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/">
+        </div>
+        <div class="name">
+            <i>frank</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-在浏览器中输入网页地址"><span class="toc-text">1.在浏览器中输入网页地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-访问互联网，获取ip地址"><span class="toc-text">2.访问互联网，获取ip地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-浏览器负责发起请求"><span class="toc-text">3.浏览器负责发起请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-服务器在端口接受请求"><span class="toc-text">4.服务器在端口接受请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-浏览器负责返回内容"><span class="toc-text">5.浏览器负责返回内容</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        HTTP入门
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-03-24 15:14:27</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#HTTP" title="HTTP">HTTP</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content ">
+        <p>HTTP基本介绍<br><a id="more"></a><br><img src="/2019/03/24/HTTP入门/如何访问网页.png" alt="如何访问网页"></p>
+<h2 id="1-在浏览器中输入网页地址"><a href="#1-在浏览器中输入网页地址" class="headerlink" title="1.在浏览器中输入网页地址"></a>1.在浏览器中输入网页地址</h2><p><strong>浏览器：</strong></p>
+<ul>
+<li><p>概念：</p>
+<ul>
+<li>（1） 将网页渲染出来，供用户查看（2）能够让用户通过浏览器，进行网页的交互</li>
+</ul>
+</li>
+<li><p>种类：</p>
+<ul>
+<li>ie /chrome/ firefox/ safari/ opera</li>
+</ul>
+</li>
+<li><p>内核：</p>
+<ul>
+<li>浏览器内核也就是浏览器所采用的渲染引擎，渲染引擎决定了浏览器如何显示网页的内容，以及页面格式信息；IE内核：Trident；谷歌内核：webkit／blink；火狐内核：gecko；Safari内核：webkit；欧朋内核：presto</li>
+</ul>
+</li>
+</ul>
+<p><strong>URL</strong></p>
+<ul>
+<li>uniform resource locator,统一资源定位符，互联网上的每个资源都有一个唯一的URL地址<ul>
+<li>URL就是浏览器地址栏中输入的地址；</li>
+<li>URL格式：URL协议类型+服务器IP地址+服务器端口号+需要访问的资源名称。例：<a href="http://127.0.0.1/index.html(浏览器会自动添加:80)http://127.0.0.1:80/index.html(完整的格式)" target="_blank" rel="noopener">http://127.0.0.1/index.html(浏览器会自动添加:80)http://127.0.0.1:80/index.html(完整的格式)</a></li>
+</ul>
+</li>
+<li>URN(区别URL):<a href="https://www.jianshu.com/p/ba15d066f777" target="_blank" rel="noopener">https://www.jianshu.com/p/ba15d066f777</a></li>
+</ul>
+<h2 id="2-访问互联网，获取ip地址"><a href="#2-访问互联网，获取ip地址" class="headerlink" title="2.访问互联网，获取ip地址"></a>2.访问互联网，获取ip地址</h2><p><strong>TCP协议：</strong></p>
+<ul>
+<li><strong>传输控制协议</strong>（英语：Transmission Control Protocol，缩写：TCP）是一种面向连接的、可靠的、基于字节流的传输层通信协议</li>
+<li><p><strong>用户数据包协议</strong>（英语：User Datagram Protocol，缩写：UDP），又称用户数据包协议，是一个简单的面向数据报的传输层协议。相比于tcp来说不面向连接、不可靠、但速度较快。</p>
+</li>
+<li><p>TCP协议的运行可划分为三个阶段：连接创建(connection establishment)、数据传送（data transfer）和连接终止（connection termination）。其中TCP用三路握手（或称三次握手，three-way handshake）过程创建一个连接。</p>
+<ul>
+<li>客户端：我要连接你了，可以吗</li>
+<li>服务端：嗯，我准备好了，连接我吧</li>
+<li>客户端：那我连接你咯。</li>
+<li>开始后面步骤 </li>
+</ul>
+</li>
+</ul>
+<p><strong>IP协议</strong></p>
+<ul>
+<li>网际协议（英语：Internet Protocol，缩写为IP），又译互联网协议，是用于分组交换数据网络的一种协议。</li>
+<li>IP是在TCP/IP协议族中网络层的主要协议，任务仅仅是根据源主机和目的主机的地址来传送数据。</li>
+<li>常用ip地址：本地 IP：127.0.0.1 路由器IP：192.168.1.1 电脑是 192.168.1.2，手机是 192.168.1.3</li>
+</ul>
+<p><strong>路由器</strong></p>
+<ul>
+<li>路由器（英语：Router，又称路径器）是一种电讯网络设备，提供路由与转送两种重要机制，可以决定数据包从来源端到目的端所经过的路由路径（host到host之间的传输路径），这个过程称为路由；将路由器输入端的数据包移送至适当的路由器输出端（在路由器内部进行），这称为转送。路由工作在OSI模型的第三层——即网络层，例如网际协议（IP）。<ul>
+<li>内网中的设备可以互相访问（比如你可以用电脑或手机进入 <a href="http://192.168.1.1" target="_blank" rel="noopener">http://192.168.1.1</a> 来查看你的路由器），但是不能直接访问外网，内网设备想要访问外网，就必须经过路由器中转。</li>
+<li>外网中的设备可以互相访问（比如 qq.com 可以把首页发送给你的路由器，你的路由器有外网 IP），但是外网中的设备无法访问你的内网设备（通过路由器访问）</li>
+</ul>
+</li>
+</ul>
+<p><strong>DNS</strong></p>
+<ul>
+<li>域名系统（英文：Domain Name System，缩写： ‘DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。 </li>
+</ul>
+<h2 id="3-浏览器负责发起请求"><a href="#3-浏览器负责发起请求" class="headerlink" title="3.浏览器负责发起请求"></a>3.浏览器负责发起请求</h2><p><strong>查询请求</strong></p>
+<ul>
+<li>（1）Git Bash<br>  -<code>curl -s -v -H &quot;Frank: xxx&quot; -- &quot;https://www.baidu.com&quot;</code></li>
+<li>(2)用chrome发请求<ul>
+<li>A. 打开 Network</li>
+<li>B. 地址栏输入网址</li>
+<li>C. 在 Network 点击，查看 request，点击「view source」</li>
+<li>D. 点击「view source」</li>
+<li>E. 可以看到请求的前三部分了</li>
+<li>F. 如果有请求的第四部分，那么在 FormData 或 Payload 里面可以看到</li>
+</ul>
+</li>
+</ul>
+<p><strong>请求格式</strong><br>    1.动词 路径 协议/版本<br>    2.key1: value1<br>    2.key2: value2<br>    2.key3: value3<br>    2.content-type: application/x-www-form-urlencoded<br>    2.Host: <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>    2.User-Agent: curl/7.54.0<br>    3.<br>    4.要上传的数据</p>
+<ul>
+<li>注意：<ul>
+<li><strong>最多</strong>包含四部分，<strong>最少</strong>包含三部分（也就是第四部分可以为空</li>
+<li>第三部分永远都是一个回车（区分第二部分和第四部分</li>
+<li>动词由 <strong>GET</strong>获取 <strong>POST</strong>新增/上传 PUT整体更新/PATCH局部更新 DELETE删除 HEAD OPTIONS</li>
+<li>这里的路径包括 查询参数，但<strong>不</strong>包括 描点</li>
+<li>如果你没有写路径，那么默认为/</li>
+<li>第2部分中的content-type标注了第四部分的格式</li>
+<li>x-实验性值，没有写入规范</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-服务器在端口接受请求"><a href="#4-服务器在端口接受请求" class="headerlink" title="4.服务器在端口接受请求"></a>4.服务器在端口接受请求</h2><p><strong>端口</strong></p>
+<ul>
+<li>你想要访问一个设备（前提是你使用的是 TCP 或 UDP 协议。），只指定 IP 是不够的，还必须指定端口（Port）。端口其实就是一个编号，并不是一种硬件。</li>
+<li>一个服务器（硬件）不一定只提供一种服务，比如一个服务器既提供 HTTP 服务，又提供 FTP 服务，还提供 SMTP 服务（邮件服务），那么只用一个 IP 是无法告诉服务器你想要使用哪种服务。以这里有一个重要的原则：一个端口对应一个服务。</li>
+<li><p><a href="https://zh.wikipedia.org/wiki/TCP/UDP端口列表#0.E5.88.B01023.E5.8F.B7.E7.AB.AF.E5.8F.A3" target="_blank" rel="noopener">维基百科</a>把 0 到 1023 号端口对应的服务都告诉你了，点进去看看吧。要提供 HTTP 服务你最好使用 80 端口、要提供 HTTPS 服务你最好使用 443 端口、要提供 FTP 服务你最好使用 21 端口（能不能使用别的端口？可以，不过不建议你违反约定）</p>
+</li>
+<li><p>每个机器一共有 65535（2的16次方减1）个端口（这是协议规定的）。不过这些端口的使用由一些规定</p>
+<ul>
+<li>0 到 1023（2的10次方减1）号端口是留给系统使用的，你只有拥有了管理员权限后，才能使用这 1024 个端口。</li>
+<li>其他端口可以给普通用户使用</li>
+<li>如果一个端口正在提供服务，也就是被占用了，那么就不能再使用这个端口。除非你先停掉正在占用这个端口的服务。以后你们会经常遇到这个问题。</li>
+</ul>
+</li>
+</ul>
+<p><strong>服务器</strong></p>
+<ul>
+<li>一个管理资源并为用户提供服务的计算机软件，通常分为文件服务器（能使用户在其它计算机访问文件），数据库服务器和应用程序服务器。</li>
+<li>运行以上软件的计算机，或称为网络主机（Host）。</li>
+</ul>
+<h2 id="5-浏览器负责返回内容"><a href="#5-浏览器负责返回内容" class="headerlink" title="5.浏览器负责返回内容"></a>5.浏览器负责返回内容</h2><p><strong>响应请求</strong></p>
+<ul>
+<li>（1）Git Bash<br>  -<code>curl -s -v -H &quot;Frank: xxx&quot; -- &quot;https://www.baidu.com&quot;</code></li>
+<li>(2)用chrome发请求<ul>
+<li>A.打开 Network</li>
+<li>B.输入网址</li>
+<li>C.选中第一个响应</li>
+<li>D.查看 Response Headers，点击「view source」你会看到响应的前两部分</li>
+<li>E.查看 Response 或者 Preview，你会看到响应的第 4 部分</li>
+</ul>
+</li>
+</ul>
+<p><strong>响应格式</strong><br>    1.协议/版本号 状态码 状态解释<br>    2.key1: value1<br>    2.key2: value2<br>    2.contet-length:<br>    2.content-type: text/html<br>    3.<br>    4.要下载的内容</p>
+<p><strong>状态码</strong><br>    • 1xx 不常用<br>    • 2xx 表示成功 （200普通成功，204创建成功）<br>    • 3xx 表示滚吧 （301永久搬走了 302临时不存在 304）<br>    •4xx 表示你错了<br>    •5xx 表示我错了 服务器挂了</p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
