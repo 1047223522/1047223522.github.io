@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>css布局</title>
+      <link href="/2019/04/06/css%E5%B8%83%E5%B1%80/"/>
+      <url>/2019/04/06/css%E5%B8%83%E5%B1%80/</url>
+      
+        <content type="html"><![CDATA[<p>css中几种常见的布局以及居中介绍<br><a id="more"></a></p><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p>主要参考mdn的<a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout" target="_blank" rel="noopener">布局指南</a>，主要分为：<br>&nbsp;&nbsp;&nbsp;&nbsp;•<a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Floats" target="_blank" rel="noopener">浮动</a><br>&nbsp;&nbsp;&nbsp;&nbsp;•<a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/%E5%AE%9A%E4%BD%8D" target="_blank" rel="noopener">定位</a><br>&nbsp;&nbsp;&nbsp;&nbsp;•<a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank" rel="noopener">弹性盒子</a><br>&nbsp;&nbsp;&nbsp;&nbsp;•<a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Grids" target="_blank" rel="noopener">网格布局</a><br>其他学习资料：<a href="http://zh.learnlayout.com/no-layout.html" target="_blank" rel="noopener">学习css布局</a></p><h2 id="居中"><a href="#居中" class="headerlink" title="居中"></a>居中</h2><p>主要参考<a href="https://css-tricks.com/centering-css-complete-guide/" target="_blank" rel="noopener">css-triks</a><br><img src="/2019/04/06/css布局/css居中.png" alt="css居中"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 布局 </tag>
+            
+            <tag> 居中 </tag>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>html标签（一）</title>
+      <link href="/2019/03/25/html%E6%A0%87%E7%AD%BE%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+      <url>/2019/03/25/html%E6%A0%87%E7%AD%BE%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<p>html的基本结构及h、p、Hr、img、br、注释、a标签<br><a id="more"></a></p><h2 id="html的基本结构"><a href="#html的基本结构" class="headerlink" title="html的基本结构"></a>html的基本结构</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="H系列标签（Header"><a href="#H系列标签（Header" class="headerlink" title="H系列标签（Header)"></a>H系列标签（Header)</h2><p><strong>作用：</strong>用于给文本添加标题语义<br><strong>格式：</strong><code>&lt;h1&gt;文字&lt;/h1&gt;</code><br><strong>注意：</strong><br>    • H1标签是给文本添加标题语义，不是用于修改文本的样式<br>    • 一共有6个，从h1——h6，超过6无效<br>    • 被h系列标签包裹的内容会独占一行<br>    • h1最大，h6最小<br>    •在企业开发中，一定要慎用h类标签，特别是h1标签，在企业开发中一般情况下一个界面中只能出现一个h1标签（和seo有关）</p><h2 id="p标签-paragraph"><a href="#p标签-paragraph" class="headerlink" title="p标签(paragraph)"></a>p标签(paragraph)</h2><p><strong>作用：</strong>告诉浏览器哪些文字是一个段落<br><strong>格式：</strong><code>&lt;p&gt;文字&lt;/p&gt;</code><br><strong>注意：</strong>在浏览器中会单独占一行</p><h2 id="Hr标签（horizontal-rule）"><a href="#Hr标签（horizontal-rule）" class="headerlink" title="Hr标签（horizontal rule）"></a>Hr标签（horizontal rule）</h2><p><strong>作用：</strong>在浏览器上显示一条分割线<br><strong>格式：</strong><code>&lt;hr&gt;</code><br><strong>注意：</strong>在浏览器中单独占据一行；hr标签可以写/（xhtml标准）或者不写（html标准），在做前端开发中，按照高级开发工具提示即可</p><h2 id="img标签-imagine"><a href="#img标签-imagine" class="headerlink" title="img标签(imagine)"></a>img标签(imagine)</h2><p><strong>作用：</strong>image缩写，高速浏览器我们需要显示一张图片<br><strong>格式：</strong><code>&lt;IMG SRC=&quot;&quot;&gt;</code>,src是英文source的缩写，告诉浏览器需要显示的图片名称<br><strong>注意：</strong><br>    • 和h标签、p标签不一样，img标签不会独占一行；<br>    • 指定高度和宽度，可能会导致图片变形，如果要避免变形，只指定宽度或高度其中一个即可<br><strong>属性：</strong><br>    • width宽度(无指定宽度高度，按照默认显示)<br>    • height高度(最好只指定宽度或高度，防止变形)<br>    • title鼠标悬停在鼠标上时所弹出的描述框）<br>    • alt是alternate的缩写，告诉浏览器当需要显示的图片找不到时，做指定的显示内容<br><strong>img标签的路径问题：</strong>其实想给sec属性赋值有两种方式：<br>&nbsp;&nbsp;<strong>i. 相对路径：</strong>每次都从.HTML文件所在的文件夹开始查找<br>&nbsp;&nbsp;&nbsp;&nbsp;同级：图片和.HTML文件储存在同一个文件夹中；格式：<code>&lt;img src=“xx”&gt;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>下级（用的最多）：</strong>储存图片的文件夹和.html文件在同一个文件夹中，格式 : <code>&lt;img src=“images/xx”&gt;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;上级：存储图片的文件和存储.html文件的文件夹在同一个位置；格式：<code>&lt;img src=“../xx”&gt;</code><br>&nbsp;&nbsp;ii. 绝对路径：每次都是从指定的盘符（c盘d盘）开始查找，格式：<code>&lt;img src=&quot;C:\Users\fuyuh\Desktop\HTML5/xx&gt;</code><br><strong>注意：</strong><br>    • 路径中不要出现中文，否则可能出现未知问题<br>    • 如果通过相对路径指定，不能跨盘符<br>    • 以后企业开发中如果需要编写路径，统一使用发斜杠/，不要使用正斜杠、，因为将来我们开放的程序可能会部署到其他操作系统的服务器中，而在其他操作系统中路径都是/。<br>    • 在企业开发中，一般不适用绝对路径，可以移植性不好。也就是说将你写好的代码移植给别人，可能用不了。</p><h2 id="br标签（break）"><a href="#br标签（break）" class="headerlink" title="br标签（break）"></a>br标签（break）</h2><p><strong>作用：</strong>html中换行<br><strong>格式：</strong><code>&lt;br&gt;</code><br><strong>注意：</strong><br>    • 多个br标签可以连续实用，实用多少个br标签就换多少行<br>    • 由于html作用是用于给文本添加语义，而br标签的语义是不另起一个段落换行，而在企业开发中一般情况下需要换行是因为需要另起一个段落，所以企业开发中很少使用br标签 （企业开放中使用p标签的多）</p><h2 id="注释标签"><a href="#注释标签" class="headerlink" title="注释标签"></a>注释标签</h2><p><strong>作用：</strong>注释<br><strong>格式：</strong><code>&lt;!----&gt;</code></p><h2 id="a标签-anchor"><a href="#a标签-anchor" class="headerlink" title="a标签(anchor)"></a>a标签(anchor)</h2><p><strong>作用：</strong>用于控制页面与页面之间跳转<br><strong>格式：</strong><code>&lt;a href=&quot;指定需要跳转的目标界面&quot;&gt;需要展现给用户查看的内容&lt;/a&gt;</code><br><strong>属性：</strong><br>&nbsp;i. target属性：控制如何跳转，_self当前选项卡跳转（默认）；_blank在新的选项卡中跳转；_parent在父框架跳转；_top在最顶层框架跳转。<br>&nbsp;ii. title属性：与img标签中title一样，都是用来控制鼠标悬停是显示的提示文本<br>&nbsp;iii. id属性：跳转到指定位置；（1）给指定标签指定id属性，如<code>&lt;h2 id=&quot;xx&quot;&gt;</code>（2）告诉a标签需要跳转目标所对象标签的id属性<code>&lt;a href=&quot;#xx&quot;&gt;xxxx&lt;/a&gt;</code>。<br><strong>注意：</strong><br>    • a标签不只可以让文字点击，也可以让图片点击，<code>格式：&lt;a href=&quot;url&quot;&gt;&lt;img src=&quot;xx&quot;&gt;&lt;/a&gt;</code><br>    • 一个a标签必须有一个href属性，否在a标签不知道要跳转到什么地方<br>    • 如果通过a标签的href属性指定一个url地址，那么必须在地质前面加上http://或https://<br>    • a标签的href属性除了可以指定一个网络地址以外，还可以指定一个本地的地址<br><strong>特例：</strong><br>    <code>&lt;a href=&quot;javascript:;&quot;&gt;&lt;/a&gt;</code>, 伪协议，不起任何效果的跳转。<br>       <code>&lt;a href=&quot;javascript:alert=(1)&quot;&gt;&lt;/a&gt;</code><br>       <code>&lt;a href=&quot;//qq.com&quot;&gt;&lt;/a&gt;</code>，无协议<br>    <code>&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;</code><br>    <code>&lt;a href=&quot;?name=aaa&quot;&gt;&lt;/a&gt;</code><br>    <code>&lt;a href=&quot;./index.html&quot;&gt;&lt;/a&gt;</code><br>    <code>&lt;a href=&quot;download&quot;&gt;&lt;/a&gt;</code></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTTP入门</title>
+      <link href="/2019/03/24/HTTP%E5%85%A5%E9%97%A8/"/>
+      <url>/2019/03/24/HTTP%E5%85%A5%E9%97%A8/</url>
+      
+        <content type="html"><![CDATA[<p>HTTP基本介绍<br><a id="more"></a><br><img src="/2019/03/24/HTTP入门/如何访问网页.png" alt="如何访问网页"></p><h2 id="1-在浏览器中输入网页地址"><a href="#1-在浏览器中输入网页地址" class="headerlink" title="1.在浏览器中输入网页地址"></a>1.在浏览器中输入网页地址</h2><p><strong>浏览器：</strong></p><ul><li><p>概念：</p><ul><li>（1） 将网页渲染出来，供用户查看（2）能够让用户通过浏览器，进行网页的交互</li></ul></li><li><p>种类：</p><ul><li>ie /chrome/ firefox/ safari/ opera</li></ul></li><li><p>内核：</p><ul><li>浏览器内核也就是浏览器所采用的渲染引擎，渲染引擎决定了浏览器如何显示网页的内容，以及页面格式信息；IE内核：Trident；谷歌内核：webkit／blink；火狐内核：gecko；Safari内核：webkit；欧朋内核：presto</li></ul></li></ul><p><strong>URL</strong></p><ul><li>uniform resource locator,统一资源定位符，互联网上的每个资源都有一个唯一的URL地址<ul><li>URL就是浏览器地址栏中输入的地址；</li><li>URL格式：URL协议类型+服务器IP地址+服务器端口号+需要访问的资源名称。例：<a href="http://127.0.0.1/index.html(浏览器会自动添加:80)http://127.0.0.1:80/index.html(完整的格式)" target="_blank" rel="noopener">http://127.0.0.1/index.html(浏览器会自动添加:80)http://127.0.0.1:80/index.html(完整的格式)</a></li></ul></li><li>URN(区别URL):<a href="https://www.jianshu.com/p/ba15d066f777" target="_blank" rel="noopener">https://www.jianshu.com/p/ba15d066f777</a></li></ul><h2 id="2-访问互联网，获取ip地址"><a href="#2-访问互联网，获取ip地址" class="headerlink" title="2.访问互联网，获取ip地址"></a>2.访问互联网，获取ip地址</h2><p><strong>TCP协议：</strong></p><ul><li><strong>传输控制协议</strong>（英语：Transmission Control Protocol，缩写：TCP）是一种面向连接的、可靠的、基于字节流的传输层通信协议</li><li><p><strong>用户数据包协议</strong>（英语：User Datagram Protocol，缩写：UDP），又称用户数据包协议，是一个简单的面向数据报的传输层协议。相比于tcp来说不面向连接、不可靠、但速度较快。</p></li><li><p>TCP协议的运行可划分为三个阶段：连接创建(connection establishment)、数据传送（data transfer）和连接终止（connection termination）。其中TCP用三路握手（或称三次握手，three-way handshake）过程创建一个连接。</p><ul><li>客户端：我要连接你了，可以吗</li><li>服务端：嗯，我准备好了，连接我吧</li><li>客户端：那我连接你咯。</li><li>开始后面步骤 </li></ul></li></ul><p><strong>IP协议</strong></p><ul><li>网际协议（英语：Internet Protocol，缩写为IP），又译互联网协议，是用于分组交换数据网络的一种协议。</li><li>IP是在TCP/IP协议族中网络层的主要协议，任务仅仅是根据源主机和目的主机的地址来传送数据。</li><li>常用ip地址：本地 IP：127.0.0.1 路由器IP：192.168.1.1 电脑是 192.168.1.2，手机是 192.168.1.3</li></ul><p><strong>路由器</strong></p><ul><li>路由器（英语：Router，又称路径器）是一种电讯网络设备，提供路由与转送两种重要机制，可以决定数据包从来源端到目的端所经过的路由路径（host到host之间的传输路径），这个过程称为路由；将路由器输入端的数据包移送至适当的路由器输出端（在路由器内部进行），这称为转送。路由工作在OSI模型的第三层——即网络层，例如网际协议（IP）。<ul><li>内网中的设备可以互相访问（比如你可以用电脑或手机进入 <a href="http://192.168.1.1" target="_blank" rel="noopener">http://192.168.1.1</a> 来查看你的路由器），但是不能直接访问外网，内网设备想要访问外网，就必须经过路由器中转。</li><li>外网中的设备可以互相访问（比如 qq.com 可以把首页发送给你的路由器，你的路由器有外网 IP），但是外网中的设备无法访问你的内网设备（通过路由器访问）</li></ul></li></ul><p><strong>DNS</strong></p><ul><li>域名系统（英文：Domain Name System，缩写： ‘DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。 </li></ul><h2 id="3-浏览器负责发起请求"><a href="#3-浏览器负责发起请求" class="headerlink" title="3.浏览器负责发起请求"></a>3.浏览器负责发起请求</h2><p><strong>查询请求</strong></p><ul><li>（1）Git Bash<br>  -<code>curl -s -v -H &quot;Frank: xxx&quot; -- &quot;https://www.baidu.com&quot;</code></li><li>(2)用chrome发请求<ul><li>A. 打开 Network</li><li>B. 地址栏输入网址</li><li>C. 在 Network 点击，查看 request，点击「view source」</li><li>D. 点击「view source」</li><li>E. 可以看到请求的前三部分了</li><li>F. 如果有请求的第四部分，那么在 FormData 或 Payload 里面可以看到</li></ul></li></ul><p><strong>请求格式</strong><br>    1.动词 路径 协议/版本<br>    2.key1: value1<br>    2.key2: value2<br>    2.key3: value3<br>    2.content-type: application/x-www-form-urlencoded<br>    2.Host: <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>    2.User-Agent: curl/7.54.0<br>    3.<br>    4.要上传的数据</p><ul><li>注意：<ul><li><strong>最多</strong>包含四部分，<strong>最少</strong>包含三部分（也就是第四部分可以为空</li><li>第三部分永远都是一个回车（区分第二部分和第四部分</li><li>动词由 <strong>GET</strong>获取 <strong>POST</strong>新增/上传 PUT整体更新/PATCH局部更新 DELETE删除 HEAD OPTIONS</li><li>这里的路径包括 查询参数，但<strong>不</strong>包括 描点</li><li>如果你没有写路径，那么默认为/</li><li>第2部分中的content-type标注了第四部分的格式</li><li>x-实验性值，没有写入规范</li></ul></li></ul><h2 id="4-服务器在端口接受请求"><a href="#4-服务器在端口接受请求" class="headerlink" title="4.服务器在端口接受请求"></a>4.服务器在端口接受请求</h2><p><strong>端口</strong></p><ul><li>你想要访问一个设备（前提是你使用的是 TCP 或 UDP 协议。），只指定 IP 是不够的，还必须指定端口（Port）。端口其实就是一个编号，并不是一种硬件。</li><li>一个服务器（硬件）不一定只提供一种服务，比如一个服务器既提供 HTTP 服务，又提供 FTP 服务，还提供 SMTP 服务（邮件服务），那么只用一个 IP 是无法告诉服务器你想要使用哪种服务。以这里有一个重要的原则：一个端口对应一个服务。</li><li><p><a href="https://zh.wikipedia.org/wiki/TCP/UDP端口列表#0.E5.88.B01023.E5.8F.B7.E7.AB.AF.E5.8F.A3" target="_blank" rel="noopener">维基百科</a>把 0 到 1023 号端口对应的服务都告诉你了，点进去看看吧。要提供 HTTP 服务你最好使用 80 端口、要提供 HTTPS 服务你最好使用 443 端口、要提供 FTP 服务你最好使用 21 端口（能不能使用别的端口？可以，不过不建议你违反约定）</p></li><li><p>每个机器一共有 65535（2的16次方减1）个端口（这是协议规定的）。不过这些端口的使用由一些规定</p><ul><li>0 到 1023（2的10次方减1）号端口是留给系统使用的，你只有拥有了管理员权限后，才能使用这 1024 个端口。</li><li>其他端口可以给普通用户使用</li><li>如果一个端口正在提供服务，也就是被占用了，那么就不能再使用这个端口。除非你先停掉正在占用这个端口的服务。以后你们会经常遇到这个问题。</li></ul></li></ul><p><strong>服务器</strong></p><ul><li>一个管理资源并为用户提供服务的计算机软件，通常分为文件服务器（能使用户在其它计算机访问文件），数据库服务器和应用程序服务器。</li><li>运行以上软件的计算机，或称为网络主机（Host）。</li></ul><h2 id="5-浏览器负责返回内容"><a href="#5-浏览器负责返回内容" class="headerlink" title="5.浏览器负责返回内容"></a>5.浏览器负责返回内容</h2><p><strong>响应请求</strong></p><ul><li>（1）Git Bash<br>  -<code>curl -s -v -H &quot;Frank: xxx&quot; -- &quot;https://www.baidu.com&quot;</code></li><li>(2)用chrome发请求<ul><li>A.打开 Network</li><li>B.输入网址</li><li>C.选中第一个响应</li><li>D.查看 Response Headers，点击「view source」你会看到响应的前两部分</li><li>E.查看 Response 或者 Preview，你会看到响应的第 4 部分</li></ul></li></ul><p><strong>响应格式</strong><br>    1.协议/版本号 状态码 状态解释<br>    2.key1: value1<br>    2.key2: value2<br>    2.contet-length:<br>    2.content-type: text/html<br>    3.<br>    4.要下载的内容</p><p><strong>状态码</strong><br>    • 1xx 不常用<br>    • 2xx 表示成功 （200普通成功，204创建成功）<br>    • 3xx 表示滚吧 （301永久搬走了 302临时不存在 304）<br>    •4xx 表示你错了<br>    •5xx 表示我错了 服务器挂了</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> HTTP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>命令行中is、cat、mv、touch以及网站explainshell.com 的用法</title>
+      <link href="/2019/03/18/%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2019/03/18/%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<p>命令行中is、cat、mv、touch以及网站explainshell.com 的用法<br><a id="more"></a></p><p>1.ls 查看路径<br>• Is<br>• Is -a 可以显示.和..开头的文件<br>• Ls -l 显示更多的信息<br>• ls -la 显示更多信息，并且显示尺寸文件</p><p>2.cat<br>cat 命令用于连接文件并打印到标准输出设备上。</p><p>3.mv 移动或重命名文件<br>复制：mv 源路径 目标路径<br>重命名：mv 已有名称 目标名称</p><p>4.touch<br>创建文件：touch 文件名<br>改变文件更新时间：touch 文件名</p><p>5.explainshell.com<br>进入此网站，输入想要查询的内容即可。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>开博大吉</title>
+      <link href="/2019/03/17/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/"/>
+      <url>/2019/03/17/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</url>
+      
+        <content type="html"><![CDATA[<p>我的博客开通啦~</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
