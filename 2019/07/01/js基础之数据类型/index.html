@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>js基础之数据类型 | 我的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本教程主要参考阮一峰的《JavaScript教程》">
+<meta name="keywords" content="javaScript,js,数据类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js基础之数据类型">
+<meta property="og:url" content="http://yoursite.com/2019/07/01/js基础之数据类型/index.html">
+<meta property="og:site_name" content="我的个人博客">
+<meta property="og:description" content="本教程主要参考阮一峰的《JavaScript教程》">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-01T06:02:52.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js基础之数据类型">
+<meta name="twitter:description" content="本教程主要参考阮一峰的《JavaScript教程》">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'> -->
+  <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css"> -->
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+  <link href="//fonts.useso.com/css?family=Open+Sans:300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <a href="/" class="logo">我的个人博客</a>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about/index.html">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        
+        
+          <a id="nav-github-link" class="nav-icon" href="https://github.com/ppoffice/hexo-theme-alex" title="Fork me on GitHub"></a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <nav id="mobile-nav" class="off">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about/index.html" class="mobile-nav-link">About</a>
+  
+  <div id="search-form-wrap-mobile">
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+  </div>
+</nav>
+      <div class="outer">
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/01/js基础之数据类型/">js基础之数据类型</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/06/css布局/">css布局</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/25/html标签（一）/">html标签（一）</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/24/HTTP入门/">HTTP入门</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/18/第二篇博客/">命令行中is、cat、mv、touch以及网站explainshell.com 的用法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javaScript/">javaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/居中/">居中</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/布局/">布局</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据类型/">数据类型</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/数据类型/" style="font-size: 10px;">数据类型</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io">Hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+        <section id="main"><article id="post-js基础之数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/01/js基础之数据类型/" class="article-date">
+  <time datetime="2019-07-01T04:49:01.000Z" itemprop="datePublished">2019-07-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js基础之数据类型
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本教程主要参考阮一峰的<a href="https://wangdoc.com/javascript/" target="_blank" rel="noopener">《JavaScript教程》</a><br><a id="more"></a></p>
+<h1 id="JS简介"><a href="#JS简介" class="headerlink" title="JS简介"></a>JS简介</h1><p>JavaScript 是一种轻量级的脚本语言。所谓“脚本语言”（script language），指的是它不具备开发操作系统的能力，而是只用来编写控制其他大型应用程序（比如浏览器）的“脚本”。<br><strong>核心语法</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基本的<strong>语法构造</strong>，比如操作符、控制结构、语句<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>标准库</strong>，就是一系列具有各种功能的对象比如Array、Date、Math等<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;各种宿主环境提供额外的 <strong>API</strong>（即只能在该环境使用的接口），以便 JavaScript 调用。以浏览器为例，它提供的额外 API 可以分成三大类：浏览器控制类：操作浏览器； DOM 类：操作网页的各种元素；Web 类：实现互联网的各种功能<br><strong>js功能</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（1）操控浏览器；（2）浏览器平台化；（3）node项目使其可以用于服务器的开发；（4）数据库操作 NoSQL；（5）移动平台开发；（6）内嵌脚本语言；（7）跨平台的桌面应用程序<br><strong>js特点</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;易学性——学习环境无处不在，简单，与主流语言相似；强大的性能——语法灵活，表达力强；支持编译运行；事件驱动和非柱塞式设计；开放性；社区支持和就业机会多</p>
+<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="执行单位、表达式及语句"><a href="#执行单位、表达式及语句" class="headerlink" title="执行单位、表达式及语句"></a>执行单位、表达式及语句</h2><p>执行单位：<strong>行</strong><br>表达式：如1+3，指为了<strong>得到返回值</strong>的计算式<br>语句：以分号结尾，一个分号就表示一个语句的结束，多个语句可以写在一行。其中如果要在一行里写两个语句，就可以加上<strong>分号</strong>，作为间隔；如果一行只有一个语句，那么语句后面可以接分号，也可以不接分号，接上分号就是显式地断行，不接分号也没问题<br>语句和表达式得区别：</p>
+<blockquote>
+<p>语句主要为了进行某种操作，一般情况下不需要返回值；<br>表达式则是为了得到返回值，一定会返回一个值。<br>凡是 JavaScript 语言中预期为值的地方，都可以使用表达式。比如，赋值语句的等号右边，预期是一个值，因此可以放置各种表达式。</p>
+</blockquote>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ol>
+<li>区分大小写</li>
+<li>声明和赋值是两个分开的步骤，也可以合在一起。如<code>var a = 1;var a;</code>等同于<code>var a = 1;</code></li>
+<li>没有赋值，变量的值为undefined（特殊得值，表示无定义）</li>
+<li>可以省略var，但是不利于表达意图，容易创建全局变量</li>
+<li>没有声明就直接使用，会报错</li>
+<li>var命令中可以申明多个变量,如<code>var a,b;</code></li>
+<li>变量可以反复赋值，随时更改</li>
+<li><p>空行不影响赋值，<code>var a = 1</code>等同于下面</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a =</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果使用var重新声明一个已经存在的变量，是无效的。但是，如果第二次声明的时候还进行了赋值，则会覆盖掉前面的值</p>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>用来识别各种值的合法名称，最常见的是变量名和函数名。区别大小写。<br>规则：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9。<br>如23、***、a+b、-d均不能作为标识符，以及js保留字：</p>
+<blockquote>
+<p>arguments、break、case、catch、class、const、continue、debugger、default、delete、do、else、enum、eval、export、extends、false、finally、for、function、if、implements、import、in、instanceof、interface、let、new、null、package、private、protected、public、return、static、super、switch、this、throw、true、try、typeof、var、void、while、with、yield。</p>
+</blockquote>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>单行：<code>//</code><br>多行：<code>/*</code>和<code>*/</code><br>html注释： <code>&lt;!--和--&gt;</code></p>
+<h2 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h2><p>使用大括号，将多个相关语句组合在一起，称为区块<br>对于var命令来说，JavaScript 的区块不构成单独的作用域（scope）。也就是说<br>区块对于var命令不构成单独的作用域，与不使用区块的情况没有任何区别<br>在 JavaScript 语言中，单独使用区块并不常见，区块往往用来构成其他更复杂的语法结构，比如for、if、while、function等。</p>
+<h2 id="条件语句、循环语句"><a href="#条件语句、循环语句" class="headerlink" title="条件语句、循环语句"></a>条件语句、循环语句</h2><p><a href="https://wangdoc.com/javascript/basic/grammar.html#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5" target="_blank" rel="noopener">条件语句</a><br><a href="https://wangdoc.com/javascript/basic/grammar.html#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5" target="_blank" rel="noopener">循环语句</a></p>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>|数值（number）   |整数和小数（比如1和3.14）         |原始类型（简单类型），不能细分|<br>|字符串（string） |文本（比如Hello World）          |原始类型（简单类型），不能细分 |<br>|布尔值（boolean）|表示真伪的两个特殊值，即true和false|原始类型（简单类型），不能细分|<br>|undefined       |表示“未定义”或不存在              |特殊值                      |<br>|null            |表示空值，即此处的值为空           |特殊值                      |<br>|对象（object）   |各种值组成的集合                  |合成类型（复杂类型）         |</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/01/js基础之数据类型/" data-id="cjxjz8sy30004qgv9gom1m5kd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaScript/">javaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据类型/">数据类型</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/06/css布局/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">css布局</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <a href="/" class="logo">我的个人博客</a>
+      &copy; 2019 frank<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.scrollLoading.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

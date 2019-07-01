@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>js基础之数据类型</title>
+      <link href="/2019/07/01/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+      <url>/2019/07/01/js%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<p>本教程主要参考阮一峰的<a href="https://wangdoc.com/javascript/" target="_blank" rel="noopener">《JavaScript教程》</a><br><a id="more"></a></p><h1 id="JS简介"><a href="#JS简介" class="headerlink" title="JS简介"></a>JS简介</h1><p>JavaScript 是一种轻量级的脚本语言。所谓“脚本语言”（script language），指的是它不具备开发操作系统的能力，而是只用来编写控制其他大型应用程序（比如浏览器）的“脚本”。<br><strong>核心语法</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基本的<strong>语法构造</strong>，比如操作符、控制结构、语句<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>标准库</strong>，就是一系列具有各种功能的对象比如Array、Date、Math等<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;各种宿主环境提供额外的 <strong>API</strong>（即只能在该环境使用的接口），以便 JavaScript 调用。以浏览器为例，它提供的额外 API 可以分成三大类：浏览器控制类：操作浏览器； DOM 类：操作网页的各种元素；Web 类：实现互联网的各种功能<br><strong>js功能</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（1）操控浏览器；（2）浏览器平台化；（3）node项目使其可以用于服务器的开发；（4）数据库操作 NoSQL；（5）移动平台开发；（6）内嵌脚本语言；（7）跨平台的桌面应用程序<br><strong>js特点</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;易学性——学习环境无处不在，简单，与主流语言相似；强大的性能——语法灵活，表达力强；支持编译运行；事件驱动和非柱塞式设计；开放性；社区支持和就业机会多</p><h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="执行单位、表达式及语句"><a href="#执行单位、表达式及语句" class="headerlink" title="执行单位、表达式及语句"></a>执行单位、表达式及语句</h2><p>执行单位：<strong>行</strong><br>表达式：如1+3，指为了<strong>得到返回值</strong>的计算式<br>语句：以分号结尾，一个分号就表示一个语句的结束，多个语句可以写在一行。其中如果要在一行里写两个语句，就可以加上<strong>分号</strong>，作为间隔；如果一行只有一个语句，那么语句后面可以接分号，也可以不接分号，接上分号就是显式地断行，不接分号也没问题<br>语句和表达式得区别：</p><blockquote><p>语句主要为了进行某种操作，一般情况下不需要返回值；<br>表达式则是为了得到返回值，一定会返回一个值。<br>凡是 JavaScript 语言中预期为值的地方，都可以使用表达式。比如，赋值语句的等号右边，预期是一个值，因此可以放置各种表达式。</p></blockquote><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ol><li>区分大小写</li><li>声明和赋值是两个分开的步骤，也可以合在一起。如<code>var a = 1;var a;</code>等同于<code>var a = 1;</code></li><li>没有赋值，变量的值为undefined（特殊得值，表示无定义）</li><li>可以省略var，但是不利于表达意图，容易创建全局变量</li><li>没有声明就直接使用，会报错</li><li>var命令中可以申明多个变量,如<code>var a,b;</code></li><li>变量可以反复赋值，随时更改</li><li><p>空行不影响赋值，<code>var a = 1</code>等同于下面</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a =</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure></li><li><p>如果使用var重新声明一个已经存在的变量，是无效的。但是，如果第二次声明的时候还进行了赋值，则会覆盖掉前面的值</p><h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>用来识别各种值的合法名称，最常见的是变量名和函数名。区别大小写。<br>规则：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9。<br>如23、***、a+b、-d均不能作为标识符，以及js保留字：</p><blockquote><p>arguments、break、case、catch、class、const、continue、debugger、default、delete、do、else、enum、eval、export、extends、false、finally、for、function、if、implements、import、in、instanceof、interface、let、new、null、package、private、protected、public、return、static、super、switch、this、throw、true、try、typeof、var、void、while、with、yield。</p></blockquote><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>单行：<code>//</code><br>多行：<code>/*</code>和<code>*/</code><br>html注释： <code>&lt;!--和--&gt;</code></p><h2 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h2><p>使用大括号，将多个相关语句组合在一起，称为区块<br>对于var命令来说，JavaScript 的区块不构成单独的作用域（scope）。也就是说<br>区块对于var命令不构成单独的作用域，与不使用区块的情况没有任何区别<br>在 JavaScript 语言中，单独使用区块并不常见，区块往往用来构成其他更复杂的语法结构，比如for、if、while、function等。</p><h2 id="条件语句、循环语句"><a href="#条件语句、循环语句" class="headerlink" title="条件语句、循环语句"></a>条件语句、循环语句</h2><p><a href="https://wangdoc.com/javascript/basic/grammar.html#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5" target="_blank" rel="noopener">条件语句</a><br><a href="https://wangdoc.com/javascript/basic/grammar.html#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5" target="_blank" rel="noopener">循环语句</a></p><h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>|数值（number）   |整数和小数（比如1和3.14）         |原始类型（简单类型），不能细分|<br>|字符串（string） |文本（比如Hello World）          |原始类型（简单类型），不能细分 |<br>|布尔值（boolean）|表示真伪的两个特殊值，即true和false|原始类型（简单类型），不能细分|<br>|undefined       |表示“未定义”或不存在              |特殊值                      |<br>|null            |表示空值，即此处的值为空           |特殊值                      |<br>|对象（object）   |各种值组成的集合                  |合成类型（复杂类型）         |</p></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> javaScript </tag>
+            
+            <tag> js </tag>
+            
+            <tag> 数据类型 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>css布局</title>
       <link href="/2019/04/06/css%E5%B8%83%E5%B1%80/"/>
       <url>/2019/04/06/css%E5%B8%83%E5%B1%80/</url>
