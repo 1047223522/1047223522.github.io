@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>js基础之内存图和原型 | 我的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="几道关于内存的题目12345题目1var a = 1; var b = a; b = 2; console.log(a) 答案：”1”12345题目2var a = &amp;#123;name: &apos;a&apos;&amp;#125;; var b = a; b=&amp;#123;name:&apos;b&apos;&amp;#125;;console.log(a.name) 答案：”a”12345题目3var a = &amp;#123;name: &apos;a&apos;&amp;#1">
+  <meta name="description" content="内存、垃圾回收、全局属性、全局函数、原型链">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js基础之内存图和原型">
 <meta property="og:url" content="http://yoursite.com/2019/07/04/js基础之内存图和原型/index.html">
 <meta property="og:site_name" content="我的个人博客">
-<meta property="og:description" content="几道关于内存的题目12345题目1var a = 1; var b = a; b = 2; console.log(a) 答案：”1”12345题目2var a = &amp;#123;name: &apos;a&apos;&amp;#125;; var b = a; b=&amp;#123;name:&apos;b&apos;&amp;#125;;console.log(a.name) 答案：”a”12345题目3var a = &amp;#123;name: &apos;a&apos;&amp;#1">
+<meta property="og:description" content="内存、垃圾回收、全局属性、全局函数、原型链">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/07/04/js基础之内存图和原型/垃圾回收.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/04/js基础之内存图和原型/number内存图.png">
-<meta property="og:updated_time" content="2019-07-04T09:17:37.854Z">
+<meta property="og:updated_time" content="2019-07-04T09:20:03.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js基础之内存图和原型">
-<meta name="twitter:description" content="几道关于内存的题目12345题目1var a = 1; var b = a; b = 2; console.log(a) 答案：”1”12345题目2var a = &amp;#123;name: &apos;a&apos;&amp;#125;; var b = a; b=&amp;#123;name:&apos;b&apos;&amp;#125;;console.log(a.name) 答案：”a”12345题目3var a = &amp;#123;name: &apos;a&apos;&amp;#1">
+<meta name="twitter:description" content="内存、垃圾回收、全局属性、全局函数、原型链">
 <meta name="twitter:image" content="http://yoursite.com/2019/07/04/js基础之内存图和原型/垃圾回收.png">
   
     <link rel="alternative" href="/atom.xml" title="我的个人博客" type="application/atom+xml">
@@ -173,7 +173,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="几道关于内存的题目"><a href="#几道关于内存的题目" class="headerlink" title="几道关于内存的题目"></a>几道关于内存的题目</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">题目<span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>; </span><br><span class="line"><span class="keyword">var</span> b = a; </span><br><span class="line">b = <span class="number">2</span>; </span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br></pre></td></tr></table></figure>
+        <p>内存、垃圾回收、全局属性、全局函数、原型链<br><a id="more"></a></p>
+<h2 id="几道关于内存的题目"><a href="#几道关于内存的题目" class="headerlink" title="几道关于内存的题目"></a>几道关于内存的题目</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">题目<span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>; </span><br><span class="line"><span class="keyword">var</span> b = a; </span><br><span class="line">b = <span class="number">2</span>; </span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br></pre></td></tr></table></figure>
 <p>答案：”1”<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">题目<span class="number">2</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;; </span><br><span class="line"><span class="keyword">var</span> b = a; </span><br><span class="line">b=&#123;<span class="attr">name</span>:<span class="string">'b'</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a.name)</span><br></pre></td></tr></table></figure></p>
 <p>答案：”a”<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">题目<span class="number">3</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;; </span><br><span class="line"><span class="keyword">var</span> b = a; </span><br><span class="line">b.name=<span class="string">'b'</span>; </span><br><span class="line"><span class="built_in">console</span>.log(a.name)</span><br></pre></td></tr></table></figure></p>
 <p>答案：”b”<br>解析：与第四题相比，题2中直接对b赋值，并不会改变a的值，但是题3中并没有在新的路径中更改b的值，而是在a的路径中更改值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">题目<span class="number">4</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;; </span><br><span class="line"><span class="keyword">var</span> b = a; </span><br><span class="line">b=<span class="literal">null</span>; </span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br></pre></td></tr></table></figure></p>
@@ -434,11 +435,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
