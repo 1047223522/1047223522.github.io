@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>js基础之基本语法 | 我的个人博客</title>
+  <title>js基础之内存图和原型 | 我的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本教程主要参考阮一峰的《JavaScript教程》">
-<meta name="keywords" content="javaScript,js,数据类型">
+  <meta name="description" content="几道关于内存的题目12345题目1var a = 1; var b = a; b = 2; console.log(a) 答案：”1”12345题目2var a = &amp;#123;name: &apos;a&apos;&amp;#125;; var b = a; b=&amp;#123;name:&apos;b&apos;&amp;#125;;console.log(a.name) 答案：”a”12345题目3var a = &amp;#123;name: &apos;a&apos;&amp;#1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js基础之基本语法">
-<meta property="og:url" content="http://yoursite.com/2019/07/01/js基础之数据类型/index.html">
+<meta property="og:title" content="js基础之内存图和原型">
+<meta property="og:url" content="http://yoursite.com/2019/07/04/js基础之内存图和原型/index.html">
 <meta property="og:site_name" content="我的个人博客">
-<meta property="og:description" content="本教程主要参考阮一峰的《JavaScript教程》">
+<meta property="og:description" content="几道关于内存的题目12345题目1var a = 1; var b = a; b = 2; console.log(a) 答案：”1”12345题目2var a = &amp;#123;name: &apos;a&apos;&amp;#125;; var b = a; b=&amp;#123;name:&apos;b&apos;&amp;#125;;console.log(a.name) 答案：”a”12345题目3var a = &amp;#123;name: &apos;a&apos;&amp;#1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-01T06:38:03.549Z">
+<meta property="og:image" content="http://yoursite.com/2019/07/04/js基础之内存图和原型/垃圾回收.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/04/js基础之内存图和原型/number内存图.png">
+<meta property="og:updated_time" content="2019-07-04T09:17:37.854Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js基础之基本语法">
-<meta name="twitter:description" content="本教程主要参考阮一峰的《JavaScript教程》">
+<meta name="twitter:title" content="js基础之内存图和原型">
+<meta name="twitter:description" content="几道关于内存的题目12345题目1var a = 1; var b = a; b = 2; console.log(a) 答案：”1”12345题目2var a = &amp;#123;name: &apos;a&apos;&amp;#125;; var b = a; b=&amp;#123;name:&apos;b&apos;&amp;#125;;console.log(a.name) 答案：”a”12345题目3var a = &amp;#123;name: &apos;a&apos;&amp;#1">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/04/js基础之内存图和原型/垃圾回收.png">
   
     <link rel="alternative" href="/atom.xml" title="我的个人博客" type="application/atom+xml">
   
@@ -151,54 +153,54 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js基础之数据类型" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-js基础之内存图和原型" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      js基础之基本语法
+      js基础之内存图和原型
     </h1>
   
 
         
-        <a href="/2019/07/01/js基础之数据类型/" class="archive-article-date">
-  	<time datetime="2019-07-01T04:49:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
+        <a href="/2019/07/04/js基础之内存图和原型/" class="archive-article-date">
+  	<time datetime="2019-07-04T07:32:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本教程主要参考阮一峰的<a href="https://wangdoc.com/javascript/" target="_blank" rel="noopener">《JavaScript教程》</a><br><a id="more"></a></p>
-<h1 id="JS简介"><a href="#JS简介" class="headerlink" title="JS简介"></a>JS简介</h1><p>JavaScript 是一种轻量级的脚本语言。所谓“脚本语言”（script language），指的是它不具备开发操作系统的能力，而是只用来编写控制其他大型应用程序（比如浏览器）的“脚本”。<br><strong>核心语法</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基本的<strong>语法构造</strong>，比如操作符、控制结构、语句<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>标准库</strong>，就是一系列具有各种功能的对象比如Array、Date、Math等<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;各种宿主环境提供额外的 <strong>API</strong>（即只能在该环境使用的接口），以便 JavaScript 调用。以浏览器为例，它提供的额外 API 可以分成三大类：浏览器控制类：操作浏览器； DOM 类：操作网页的各种元素；Web 类：实现互联网的各种功能<br><strong>js功能</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（1）操控浏览器；（2）浏览器平台化；（3）node项目使其可以用于服务器的开发；（4）数据库操作 NoSQL；（5）移动平台开发；（6）内嵌脚本语言；（7）跨平台的桌面应用程序<br><strong>js特点</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;易学性——学习环境无处不在，简单，与主流语言相似；强大的性能——语法灵活，表达力强；支持编译运行；事件驱动和非柱塞式设计；开放性；社区支持和就业机会多</p>
-<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="执行单位、表达式及语句"><a href="#执行单位、表达式及语句" class="headerlink" title="执行单位、表达式及语句"></a>执行单位、表达式及语句</h2><p>执行单位：<strong>行</strong><br>表达式：如1+3，指为了<strong>得到返回值</strong>的计算式<br>语句：以分号结尾，一个分号就表示一个语句的结束，多个语句可以写在一行。其中如果要在一行里写两个语句，就可以加上<strong>分号</strong>，作为间隔；如果一行只有一个语句，那么语句后面可以接分号，也可以不接分号，接上分号就是显式地断行，不接分号也没问题<br>语句和表达式得区别：</p>
-<blockquote>
-<p>语句主要为了进行某种操作，一般情况下不需要返回值；<br>表达式则是为了得到返回值，一定会返回一个值。<br>凡是 JavaScript 语言中预期为值的地方，都可以使用表达式。比如，赋值语句的等号右边，预期是一个值，因此可以放置各种表达式。</p>
-</blockquote>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ol>
-<li>区分大小写</li>
-<li>声明和赋值是两个分开的步骤，也可以合在一起。如<code>var a = 1;var a;</code>等同于<code>var a = 1;</code></li>
-<li>没有赋值，变量的值为undefined（特殊得值，表示无定义）</li>
-<li>可以省略var，但是不利于表达意图，容易创建全局变量</li>
-<li>没有声明就直接使用，会报错</li>
-<li>var命令中可以申明多个变量,如<code>var a,b;</code></li>
-<li>变量可以反复赋值，随时更改</li>
-<li><p>空行不影响赋值，<code>var a = 1</code>等同于下面</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a =</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果使用var重新声明一个已经存在的变量，是无效的。如果第二次声明的时候还进行了赋值，则会覆盖掉前面的值</p>
-</li>
+        <h2 id="几道关于内存的题目"><a href="#几道关于内存的题目" class="headerlink" title="几道关于内存的题目"></a>几道关于内存的题目</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">题目<span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>; </span><br><span class="line"><span class="keyword">var</span> b = a; </span><br><span class="line">b = <span class="number">2</span>; </span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br></pre></td></tr></table></figure>
+<p>答案：”1”<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">题目<span class="number">2</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;; </span><br><span class="line"><span class="keyword">var</span> b = a; </span><br><span class="line">b=&#123;<span class="attr">name</span>:<span class="string">'b'</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a.name)</span><br></pre></td></tr></table></figure></p>
+<p>答案：”a”<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">题目<span class="number">3</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;; </span><br><span class="line"><span class="keyword">var</span> b = a; </span><br><span class="line">b.name=<span class="string">'b'</span>; </span><br><span class="line"><span class="built_in">console</span>.log(a.name)</span><br></pre></td></tr></table></figure></p>
+<p>答案：”b”<br>解析：与第四题相比，题2中直接对b赋值，并不会改变a的值，但是题3中并没有在新的路径中更改b的值，而是在a的路径中更改值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">题目<span class="number">4</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;; </span><br><span class="line"><span class="keyword">var</span> b = a; </span><br><span class="line">b=<span class="literal">null</span>; </span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br></pre></td></tr></table></figure></p>
+<p>答案：”{name: ‘a’}<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">题目<span class="number">5</span></span><br><span class="line"><span class="keyword">var</span> a=&#123;<span class="attr">self</span>:a&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a.self)</span><br><span class="line"></span><br><span class="line">题目<span class="number">6</span></span><br><span class="line"><span class="keyword">var</span> a=&#123;&#125;;</span><br><span class="line">a.self=a;</span><br><span class="line"><span class="built_in">console</span>.log(a.self)</span><br></pre></td></tr></table></figure></p>
+<p>答案：”undefined”;{self:{…}}<br>解析：题目5中，var a是一个对象，生成一个内存路径，但是同时生成self:a中的a并没有声明；而在题目6中，首先声明了a的类型，生成一个地址，然后加入self属性和其键值a，a已经在前面出现过，所以能够被找到。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">题目<span class="number">7</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">n</span>:<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> b=a;</span><br><span class="line">a.x=a=&#123;<span class="attr">n</span>:<span class="number">2</span>&#125;;</span><br><span class="line">alert(a,x)</span><br><span class="line">alert(b,x)</span><br></pre></td></tr></table></figure></p>
+<p>答案：”undefined”;[object Object]<br>解析：等号左右两边是同时进行的，意思是新赋值一个x属性，以及改变a的值是同时进行的。<br>首先a.x = a 中a.x的a地址是34(假设），而a = {n:2}会新生成一个地址，故这个a的地址是45（假设）。再次查看a.x时，在新生成的45地址中并没有x的复制，但是b.x任然使用的是老地址34，故b.34是新a的地址。</p>
+<h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><p>如果一个对象没有被引用，他就会被回收，如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">题目<span class="number">8</span></span><br><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;；</span><br><span class="line"><span class="built_in">document</span>.body.onclick = fn；</span><br><span class="line">fn = <span class="literal">null</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;是一个垃圾吗</span><br></pre></td></tr></table></figure></p>
+<p>答案：不是，间接的被document引用。如下图所示<br><img src="/2019/07/04/js基础之内存图和原型/垃圾回收.png" alt="垃圾回收"><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">题目<span class="number">9</span></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>;</span><br><span class="line">n.xxx = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(n.xxx)</span><br></pre></td></tr></table></figure></p>
+<p>答案：undefined<br>解析：n.xxx=2会临时生产一个temp，但是执行完了就会被回收，故再次执行n.xxx时候又会生成另一个temp，但是里面没有xxx的值</p>
+<h2 id="全局属性"><a href="#全局属性" class="headerlink" title="全局属性"></a>全局属性</h2><p>全局对象 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window" target="_blank" rel="noopener">window</a><br>ECMAScript 规定全局对象叫做 global，但是浏览器把 window 作为全局对象（浏览器先存在的）<br>window 就是一个哈希表，有很多属性。<br>window 的属性就是全局变量。这些全局变量分为两种：</p>
+<ol>
+<li>一种是 ECMAScript 规定的<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• global.parseFloat<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• global.parseInt<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• global.Number<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• global.String<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• global.Boolean<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• global.Object</li>
+<li>一种是浏览器自己加的属性<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• window.alert<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• window.prompt<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• window.comfirm<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• window.console.log<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• window.console.dir<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• window.document<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• window.document.createElement<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• window.document.getElementById<br>所有 API 都可以在 MDN 里找到详细的资料。</li>
 </ol>
-<p><strong>变量提升</strong>:javaScript 引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行。这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升（hoisting）。</p>
-<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>用来识别各种值的合法名称，最常见的是变量名和函数名。区别大小写。<br>规则：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• 第一个字符，可以是<strong>任意 Unicode 字母</strong>（包括英文字母和其他语言的字母），以及美元符号（<strong>$</strong>）和下划线（<strong>_</strong>）。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用<strong>数字0-9</strong>。<br>如23、***、a+b、-d均不能作为标识符，以及js保留字：</p>
-<blockquote>
-<p>arguments、break、case、catch、class、const、continue、debugger、default、delete、do、else、enum、eval、export、extends、false、finally、for、function、if、implements、import、in、instanceof、interface、let、new、null、package、private、protected、public、return、static、super、switch、this、throw、true、try、typeof、var、void、while、with、yield。</p>
-</blockquote>
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>单行：<code>//</code><br>多行：<code>/*</code>和<code>*/</code><br>html注释： <code>&lt;!--和--&gt;</code></p>
-<h2 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h2><p>使用大括号，将多个相关语句组合在一起，称为区块<br>对于var命令来说，JavaScript 的区块不构成单独的作用域（scope）。也就是说<br>区块对于var命令不构成单独的作用域，与不使用区块的情况没有任何区别<br>在 JavaScript 语言中，单独使用区块并不常见，区块往往用来构成其他更复杂的语法结构，比如for、if、while、function等。</p>
-<h2 id="条件语句、循环语句"><a href="#条件语句、循环语句" class="headerlink" title="条件语句、循环语句"></a>条件语句、循环语句</h2><p><a href="https://wangdoc.com/javascript/basic/grammar.html#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5" target="_blank" rel="noopener">条件语句</a><br><a href="https://wangdoc.com/javascript/basic/grammar.html#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5" target="_blank" rel="noopener">循环语句</a></p>
+<h2 id="全局函数"><a href="#全局函数" class="headerlink" title="全局函数"></a>全局函数</h2><ol start="3">
+<li>Number<br>var n = new Number(1) 创建一个 Number 对象<br>1 与 new Number(1) 的区别是什么？看内存图<br>历史原因，js必须长得像java，但创作者嫌这个语法太麻烦，又发明一种<br>var n = new Number(1) 没有人用<br>var n = 1  缺点：n.toString不存在<br>于是发明一个妙计：临时转换<br>n.toString() ====  temp = new Number(n)  temp.toString()<br><img src="/2019/07/04/js基础之内存图和原型/number内存图.png" alt="number内存图"></li>
+<li>String<br>var s = new String(‘hello’) 创建一个 String 对象<br>‘hello’ 与 new String(‘hello’) 的区别是什么？看内存图</li>
+<li>Boolean<br>var b = new Boolean(true) 创建一个 Boolean 对象<br>true 与 new Boolean(true) 的区别是什么？看内存图</li>
+<li>Object<br>var o1 = {}<br>var o2 = new Object()<br>o1 和 o2 没区别</li>
+</ol>
+<p>公用的属性藏在哪？<br>所有对象都有 toString 和 valueOf 属性，那么我们是否有必要给每个对象一个 toString 和 valueOf 呢？<br>明显不需要。<br>JS 的做法是把 toString 和 valueOf 放在一个对象里（暂且叫做公用属性组成的对象）<br>然后让每一个对象的 <code>__proto__</code>存储这个「公用属性组成的对象」的地址。</p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>重要公式<br>注意大小写，number 和 Number 是不同的</p>
+<p><strong>var 对象 = new 函数()</strong><br><strong>对象.<code>__proto__</code> === 对象的构造函数.prototype</strong></p>
+<p>// 推论<br>var number = new Number()<br>number.<code>__proto__</code> = Number.prototype</p>
+<p>var object = new Object()<br>object.<code>__proto__</code>= Object.prototype</p>
+<p>var function = new Function()<br>function.<code>__proto__</code> = Function.prototype</p>
+<p>// 另外，所有函数都是由 Function 构造出来的，所以<br>Number.<code>__proto__</code> = Function.prototype // 因为 Number 是函数，是 Function 的实例<br>Object.<code>__proto__</code> = Function.prototype // 因为 Object 是函数，是 Function 的实例<br>Function.<code>__proto__</code> == Function.prototye // 因为 Function 是函数，是 Function 的实例！</p>
 
       
 
@@ -228,25 +230,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据类型</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -297,7 +280,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/01/js基础之数据类型/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/04/js基础之内存图和原型/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -311,18 +294,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/01/js基础之数据类型-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          js基础之数据类型
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/06/css布局/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">css布局</div>
+    <a href="/2019/07/02/js里的数据类型转换/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js里的数据类型转换</div>
       <i class="icon-circle-right"></i>
     </a>
   

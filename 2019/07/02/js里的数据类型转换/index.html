@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="我的个人博客">
 <meta property="og:description" content="转化为字符串，转化为数值，转化为布尔值">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-02T12:03:44.739Z">
+<meta property="og:updated_time" content="2019-07-03T12:10:19.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js里的数据类型转换">
 <meta name="twitter:description" content="转化为字符串，转化为数值，转化为布尔值">
@@ -171,8 +171,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>转化为字符串，转化为数值，转化为布尔值<br><a id="more"></a></p>
-<h2 id="任意类型转换为字符串"><a href="#任意类型转换为字符串" class="headerlink" title="任意类型转换为字符串"></a>任意类型转换为字符串</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>数值转化为字符串</span><br><span class="line">    <span class="built_in">String</span>(<span class="number">1</span>)   <span class="comment">//"1"</span></span><br><span class="line">    <span class="number">1.</span>toString()  <span class="comment">//"1"</span></span><br><span class="line">    <span class="number">1</span>+<span class="string">''</span>  <span class="comment">//"1"</span></span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>布尔值转化为字符串</span><br><span class="line">    <span class="built_in">String</span>(ture)   <span class="comment">//"ture"</span></span><br><span class="line">    ture.toString()  <span class="comment">//"ture"</span></span><br><span class="line">    ture+<span class="string">''</span>  <span class="comment">//"ture"</span></span><br><span class="line"></span><br><span class="line"><span class="number">3.</span><span class="literal">null</span>转化为字符串</span><br><span class="line">    <span class="built_in">String</span>(<span class="literal">null</span>)   <span class="comment">//"null"</span></span><br><span class="line">    <span class="literal">null</span>.toString()  <span class="comment">//报错</span></span><br><span class="line">    <span class="literal">null</span>+<span class="string">''</span>  <span class="comment">//"null"</span></span><br><span class="line"></span><br><span class="line"><span class="number">4.</span><span class="literal">undefined</span>转化为字符串</span><br><span class="line">    <span class="built_in">String</span>(<span class="literal">undefined</span>)   <span class="comment">//"undefined"</span></span><br><span class="line">    <span class="literal">undefined</span>.toString()  <span class="comment">//报错</span></span><br><span class="line">    <span class="literal">undefined</span>+<span class="string">''</span>  <span class="comment">//"undefined"</span></span><br><span class="line"></span><br><span class="line"><span class="number">5.</span>对象转化为字符串</span><br><span class="line">    <span class="built_in">String</span>(&#123;&#125;)   <span class="comment">//"[object Object]"</span></span><br><span class="line">    &#123;&#125;.toString()  <span class="comment">//报错</span></span><br><span class="line">    (&#123;&#125;)toString()  <span class="comment">//"[object Object]"</span></span><br><span class="line">    &#123;&#125;+<span class="string">''</span>  <span class="comment">//0</span></span><br><span class="line">    (&#123;&#125;)+<span class="string">''</span>  <span class="comment">//"[object Object]"</span></span><br><span class="line">    <span class="keyword">var</span> o = &#123;&#125;;o+<span class="string">''</span>  <span class="comment">//"[object Object]"</span></span><br></pre></td></tr></table></figure>
-<p>注意：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用toString时，null和undefined会报错<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用x+’’时，空对象＋’’返回值为0；({})+’’返回值则是正常的；先声明对象，后返回值也是正常的</p>
+<h2 id="任意类型转换为字符串"><a href="#任意类型转换为字符串" class="headerlink" title="任意类型转换为字符串"></a>任意类型转换为字符串</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>数值转化为字符串</span><br><span class="line">    <span class="built_in">String</span>(<span class="number">1</span>)   <span class="comment">//"1"</span></span><br><span class="line">    (<span class="number">1</span>).toString()  <span class="comment">//"1"</span></span><br><span class="line">    <span class="number">1</span>+<span class="string">''</span>  <span class="comment">//"1"</span></span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>布尔值转化为字符串</span><br><span class="line">    <span class="built_in">String</span>(ture)   <span class="comment">//"ture"</span></span><br><span class="line">    (ture).toString()  <span class="comment">//"ture"</span></span><br><span class="line">    ture+<span class="string">''</span>  <span class="comment">//"ture"</span></span><br><span class="line"></span><br><span class="line"><span class="number">3.</span><span class="literal">null</span>转化为字符串</span><br><span class="line">    <span class="built_in">String</span>(<span class="literal">null</span>)   <span class="comment">//"null"</span></span><br><span class="line">    (<span class="literal">null</span>).toString()  <span class="comment">//报错</span></span><br><span class="line">    <span class="literal">null</span>+<span class="string">''</span>  <span class="comment">//"null"</span></span><br><span class="line"></span><br><span class="line"><span class="number">4.</span><span class="literal">undefined</span>转化为字符串</span><br><span class="line">    <span class="built_in">String</span>(<span class="literal">undefined</span>)   <span class="comment">//"undefined"</span></span><br><span class="line">    (<span class="literal">undefined</span>).toString()  <span class="comment">//报错</span></span><br><span class="line">    <span class="literal">undefined</span>+<span class="string">''</span>  <span class="comment">//"undefined"</span></span><br><span class="line"></span><br><span class="line"><span class="number">5.</span>对象转化为字符串</span><br><span class="line">    <span class="built_in">String</span>(&#123;&#125;)   <span class="comment">//"[object Object]"</span></span><br><span class="line">    &#123;&#125;.toString()  <span class="comment">//报错</span></span><br><span class="line">    (&#123;&#125;)toString()  <span class="comment">//"[object Object]"</span></span><br><span class="line">    &#123;&#125;+<span class="string">''</span>  <span class="comment">//0</span></span><br><span class="line">    (&#123;&#125;)+<span class="string">''</span>  <span class="comment">//"[object Object]"</span></span><br><span class="line">    <span class="keyword">var</span> o = &#123;&#125;;o+<span class="string">''</span>  <span class="comment">//"[object Object]"</span></span><br></pre></td></tr></table></figure>
+<p>注意：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用toString时，null和undefined会报错<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用x+’’时，空对象＋’’返回值为0；({})+’’返回值则是正常的；先声明对象，后返回值也是正常的<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x.toString()是<strong>错误</strong>的写法，一定不要省略前面的<strong>括号</strong>(1).toString()</p>
 <h2 id="字符串转化为数值"><a href="#字符串转化为数值" class="headerlink" title="字符串转化为数值"></a>字符串转化为数值</h2><table>
 <thead>
 <tr>
@@ -303,6 +303,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/07/04/js基础之内存图和原型/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          js基础之内存图和原型
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/07/01/js基础之数据类型-1/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">js基础之数据类型</div>
@@ -431,10 +440,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">布局</a>
               </li>
              
@@ -444,6 +449,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
